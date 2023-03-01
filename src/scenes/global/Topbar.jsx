@@ -28,6 +28,7 @@ const Topbar = () => {
           <SearchIcon />
         </IconButton>
       </Box>
+
       {/* Icon */}
       <Box display="flex">
         <IconButton onClick={colorMode.toggleColorMode}>
