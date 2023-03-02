@@ -53,25 +53,30 @@ const SidebarMenu = () => {
         //   height: "100vh",
         //   top: 0,
         //   bottom: 0,
-        zIndex: 1000,
+        //   zIndex: 1000,
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          //  background: `${colors.primary[400]} !important`,
         },
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-inner-item": {
+
+        "& .ps-menu-button": {
           padding: "5px 35px 5px 20px !important",
         },
-        "& .pro-inner-item:hover": {
+        "& .ps-menu-button:hover": {
           color: "#868dfb !important",
+          backgroundColor: `${colors.primary[500]} !important`,
+          borderRadius: "10px 0 0 10px !important",
         },
-        "& .pro-menu-item.active": {
+        "& .ps-menu-button.ps-active": {
           color: "#6870fa !important",
+          borderRadius: "10px 0 0 10px !important",
         },
       }}
     >
-      <Sidebar collapsed={isCollapsed} backgroundColor={colors.primary[400]}>
+      <Sidebar
+        collapsed={isCollapsed}
+        backgroundColor={colors.primary[400]}
+        collapsedWidth="20px"
+      >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem

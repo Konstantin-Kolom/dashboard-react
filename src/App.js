@@ -6,7 +6,7 @@ import { ProSidebarProvider } from "react-pro-sidebar";
 import Topbar from "./scenes/global/Topbar";
 import SidebarMenu from "./scenes/global/Sidebar";
 
-import { Dashboard } from "./scenes/dashboard/index.jsx";
+import Dashboard from "./scenes/dashboard/Dashboard";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -15,7 +15,6 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-
         <div className="app">
           <ProSidebarProvider>
             <SidebarMenu />
@@ -23,7 +22,7 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
-              {/* <Route path="/" element={<Dashboard />}></Route> */}
+              <Route path="/" element={<Dashboard />}></Route>
               {/* <Route path="/team" element={<Dashboard />}></Route> */}
               {/* <Route path="/contacts" element={<Dashboard />}></Route> */}
               {/* <Route path="/invoices" element={<Dashboard />}></Route> */}
