@@ -9,6 +9,8 @@ import SidebarMenu from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
 import Contacts from "./scenes/contacts";
+import Invoices from "./scenes/invoices";
+import Form from "./scenes/form";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -26,8 +28,8 @@ function App() {
                 <Route path="/" element={<Dashboard />}></Route>
                 <Route path="/team" element={<Team />}></Route>
                 <Route path="/contacts" element={<Contacts />}></Route>
-                {/* <Route path="/invoices" element={<Dashboard />}></Route> */}
-                {/* <Route path="/form" element={<Dashboard />}></Route> */}
+                <Route path="/invoices" element={<Invoices />}></Route>
+                <Route path="/form" element={<Form />}></Route>
                 {/* <Route path="/calendar" element={<Dashboard />}></Route> */}
                 {/* <Route path="/faq" element={<Dashboard />}></Route> */}
                 {/* <Route path="/pie" element={<Dashboard />}></Route> */}
