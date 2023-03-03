@@ -29,10 +29,9 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       }}
       onClick={() => setSelected(title)}
       icon={icon}
-      router={<Link to={to} />}
+      component={<Link to={to} />}
     >
       <Typography>{title}</Typography>
-      {/* <Link to={to} /> */}
     </MenuItem>
   );
 };
@@ -54,8 +53,8 @@ const SidebarMenu = () => {
         //   top: 0,
         //   bottom: 0,
         //   zIndex: 1000,
-        "& .pro-sidebar-inner": {
-          //  background: `${colors.primary[400]} !important`,
+        "& .ps-sidebar-root ": {
+          background: `${colors.primary[400]} !important`,
         },
 
         "& .ps-menu-button": {
@@ -76,6 +75,8 @@ const SidebarMenu = () => {
         collapsed={isCollapsed}
         backgroundColor={colors.primary[400]}
         collapsedWidth="20px"
+        //   width="200px"
+        //   min-width="80px"
       >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
@@ -139,7 +140,6 @@ const SidebarMenu = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
             <Typography
               variant="h6"
               color={colors.grey[300]}
