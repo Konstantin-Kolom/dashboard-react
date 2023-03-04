@@ -78,12 +78,11 @@ const Calendar = () => {
                       {formatDate(event.start, {
                         year: "numeric",
                         month: "short",
-                        // day: "numeric",
-                        // timeZoneName: "short",
-                        // weekday: "short",
-                      })}{" "}
-                      -{" "}
-                      {formatRange(event.start, event.end, {
+                        day: "numeric",
+                        weekday: "short",
+                      })}
+
+                      {/* {formatRange(event.start, event.end, {
                         month: "2-digit",
                         year: "2-digit",
                         day: "2-digit",
@@ -91,7 +90,7 @@ const Calendar = () => {
                         locale: "es",
                         format: "dd.mm.yy",
                         // titleFormat: "day.month.year",
-                      })}
+                      })} */}
                     </Typography>
                   }
                 />
@@ -132,12 +131,12 @@ const Calendar = () => {
               {
                 id: "12315",
                 title: "All-day event",
-                date: "2023-01-01",
+                date: "2023-03-15",
               },
               {
                 id: "5123",
                 title: "Timed event",
-                date: "2023-12-31",
+                date: "2023-03-17",
               },
             ]}
           />
