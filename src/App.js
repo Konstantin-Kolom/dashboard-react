@@ -1,16 +1,17 @@
-import { ColorModeContext, useMode } from "./theem";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import { ProSidebarProvider } from "react-pro-sidebar";
 
+import { ColorModeContext, useMode } from "./theem";
+
 import Topbar from "./scenes/global/Topbar";
 import SidebarMenu from "./scenes/global/Sidebar";
-
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
 import Contacts from "./scenes/contacts";
 import Invoices from "./scenes/invoices";
 import Form from "./scenes/form";
+import Calendar from "./scenes/calendar";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -30,7 +31,7 @@ function App() {
                 <Route path="/contacts" element={<Contacts />}></Route>
                 <Route path="/invoices" element={<Invoices />}></Route>
                 <Route path="/form" element={<Form />}></Route>
-                {/* <Route path="/calendar" element={<Dashboard />}></Route> */}
+                <Route path="/calendar" element={<Calendar />}></Route>
                 {/* <Route path="/faq" element={<Dashboard />}></Route> */}
                 {/* <Route path="/pie" element={<Dashboard />}></Route> */}
                 {/* <Route path="/bar" element={<Dashboard />}></Route> */}

@@ -13,3 +13,6 @@ formik yup
 @nivo/line
 @nivo/bar
 @nivo/geo
+
+@fullcalendar/react
+@fullcalendar/interaction
