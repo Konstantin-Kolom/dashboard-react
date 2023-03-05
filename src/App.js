@@ -16,6 +16,7 @@ import FAQ from "./scenes/faq";
 import Bar from "./scenes/bar";
 import Pie from "./scenes/pie";
 import LineChart from "./scenes/line";
+import Geography from "./scenes/geography";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -40,7 +41,7 @@ function App() {
                 <Route path="/bar" element={<Bar />}></Route>
                 <Route path="/pie" element={<Pie />}></Route>
                 <Route path="/line" element={<LineChart />}></Route>
-                {/* <Route path="/geography" element={<Dashboard />}></Route> */}
+                <Route path="/geography" element={<Geography />}></Route>
               </Routes>
             </main>
           </ProSidebarProvider>
