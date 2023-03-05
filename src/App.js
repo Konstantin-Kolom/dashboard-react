@@ -42,6 +42,8 @@ function App() {
                 <Route path="/pie" element={<Pie />}></Route>
                 <Route path="/line" element={<LineChart />}></Route>
                 <Route path="/geography" element={<Geography />}></Route>
+                <Route path="*" loader="/" element={<Dashboard />}></Route>
+                <Route path="/dashboard-react" element={<Dashboard />}></Route>
               </Routes>
             </main>
           </ProSidebarProvider>
