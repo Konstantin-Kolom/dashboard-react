@@ -17,6 +17,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 import { tokens } from "../../theem";
+import img from "../../Img/viber.jpg";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -42,7 +43,7 @@ const SidebarMenu = () => {
 
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
-  const photo = "../../Img/viber.jpg";
+  //   const photo = "../../Img/viber.jpg";
 
   return (
     <Box
@@ -112,7 +113,7 @@ const SidebarMenu = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={photo}
+                  src={img}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
