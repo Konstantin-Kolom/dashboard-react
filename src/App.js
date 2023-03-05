@@ -30,7 +30,7 @@ function App() {
             <SidebarMenu />
             <main className="content">
               <Topbar />
-              <Routes location>
+              <Routes>
                 <Route path="/" element={<Dashboard />}></Route>
                 <Route path="/team" element={<Team />}></Route>
                 <Route path="/contacts" element={<Contacts />}></Route>
