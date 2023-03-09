@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -19,7 +19,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { tokens } from "../../theem";
 import img from "../../Img/viber.jpg";
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+const Item = ({ title, to, icon, selected, setSelected, collapsed }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -32,7 +32,8 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       icon={icon}
       component={<Link to={to} />}
     >
-      <Typography>{title}</Typography>
+      {!collapsed ? <Typography>{title}</Typography> : undefined}
+      {/* <Typography>{title}</Typography> */}
     </MenuItem>
   );
 };
@@ -43,17 +44,15 @@ const SidebarMenu = () => {
 
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
-  //   const photo = "../../Img/viber.jpg";
+
+  //   const { collapseSidebar, toggleSidebar, collapsed, toggled, broken, rtl } =
+  //     useProSidebar();
+
+  //   console.log(collapsed);
 
   return (
     <Box
       sx={{
-        //   position: "sticky",
-        //   display: "flex",
-        //   height: "100vh",
-        //   top: 0,
-        //   bottom: 0,
-        //   zIndex: 1000,
         "& .ps-sidebar-root ": {
           background: `${colors.primary[400]} !important`,
         },
@@ -73,7 +72,8 @@ const SidebarMenu = () => {
       }}
     >
       <Sidebar
-        collapsed={isCollapsed}
+        width={isCollapsed ? "80px" : "270px"}
+        //   collapsed={isCollapsed}
         backgroundColor={colors.primary[400]}
         collapsedWidth="20px"
         //   width="200px"
@@ -82,7 +82,10 @@ const SidebarMenu = () => {
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
-            onClick={() => setIsCollapsed(!isCollapsed)}
+            onClick={() => {
+              setIsCollapsed(!isCollapsed);
+              //   collapseSidebar();
+            }}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
@@ -99,7 +102,12 @@ const SidebarMenu = () => {
                 <Typography variant="h3" color={colors.grey[100]}>
                   ADMINIS
                 </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                <IconButton
+                  onClick={() => {
+                    setIsCollapsed(!isCollapsed);
+                    //   collapseSidebar();
+                  }}
+                >
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
@@ -140,6 +148,7 @@ const SidebarMenu = () => {
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Typography
               variant="h6"
@@ -154,6 +163,7 @@ const SidebarMenu = () => {
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Item
               title="Contacts Information"
@@ -161,6 +171,7 @@ const SidebarMenu = () => {
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Item
               title="Invoices Balances"
@@ -168,6 +179,7 @@ const SidebarMenu = () => {
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
 
             <Typography
@@ -183,6 +195,7 @@ const SidebarMenu = () => {
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Item
               title="Calendar"
@@ -190,6 +203,7 @@ const SidebarMenu = () => {
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Item
               title="FAQ Page"
@@ -197,6 +211,7 @@ const SidebarMenu = () => {
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
 
             <Typography
@@ -212,6 +227,7 @@ const SidebarMenu = () => {
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Item
               title="Pie Chart"
@@ -219,6 +235,7 @@ const SidebarMenu = () => {
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Item
               title="Line Chart"
@@ -226,6 +243,7 @@ const SidebarMenu = () => {
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
             <Item
               title="Geography Chart"
@@ -233,6 +251,7 @@ const SidebarMenu = () => {
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              collapsed={isCollapsed}
             />
           </Box>
         </Menu>
