@@ -55,6 +55,7 @@ const SidebarMenu = () => {
       sx={{
         "& .ps-sidebar-root ": {
           background: `${colors.primary[400]} !important`,
+          height: "100%",
         },
 
         "& .ps-menu-button": {
@@ -76,8 +77,6 @@ const SidebarMenu = () => {
         //   collapsed={isCollapsed}
         backgroundColor={colors.primary[400]}
         collapsedWidth="20px"
-        //   width="200px"
-        //   min-width="80px"
       >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
